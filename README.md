@@ -1,17 +1,17 @@
-<img align="right" src="https://raw.githubusercontent.com/alexklenio/formacao-scrum-master/main/Imagens/04JUL22_DIOPLAY%204.png" width=""/>   ---
+<img align="right" src="https://raw.githubusercontent.com/alexklenio/projetoIntegradorFAP/main/arquivos/fap.png?token=GHSAT0AAAAAACG66JH4OIRYTA47XUESV4K4ZL2F5GA" width=""/>   ---
 
-<img align="right" src="https://hermes.dio.me/courses/badge/ad17518a-991f-44af-87fa-33b1bf4fe677.png" width="200"/>
+<img align="right" src="https://raw.githubusercontent.com/alexklenio/projetoIntegradorFAP/main/arquivos/logo.webp?token=GHSAT0AAAAAACG66JH42JBIARWVLNC3DDKKZL2F5CA" width="200"/>
 
 
 ## Projeto 20 - CanGame Academy
 
-loren ipsum.
+Em atualização.
 
 ## Tabelas
 - Login
 - Gestor de contratos
 - Cadastro de contratos
--
+
   
 
 ### Repositório destinado às entregas do projeto Integrador FAP.
@@ -19,9 +19,9 @@ loren ipsum.
 
 <div align="center">
   <p>
-      <img src="https://img.shields.io/github/languages/count/alexklenio/formacao-fullstack-typescript"/>
-      <img src="https://img.shields.io/github/repo-size/alexklenio/formacao-fullstack-typescript"/>
-      <img src="https://img.shields.io/github/last-commit/alexklenio/formacao-fullstack-typescript"/>
-      <img src="https://img.shields.io/github/issues/alexklenio/formacao-fullstack-typescript"/>
+      <img src="https://img.shields.io/github/languages/count/alexklenio/projetoIntegradorFAP"/>
+      <img src="https://img.shields.io/github/repo-size/alexklenio/projetoIntegradorFAP"/>
+      <img src="https://img.shields.io/github/last-commit/alexklenio/projetoIntegradorFAP"/>
+      <img src="https://img.shields.io/github/issues/alexklenio/projetoIntegradorFAP"/>
   </p> 
 </div>

@@ -64,9 +64,9 @@ export const updateEndereco = async (req: Request, res: Response): Promise<Respo
 export const deleteEndereco = async (req: Request, res: Response): Promise<Response> => {
     try {
         const enderecotId = parseInt(req.params.id, 10);
-        const deletedEndereco = await EnderecoRepository.deleteEndereco(enderecotId);
+        const deleteEndereco = await EnderecoRepository.deleteEndereco(enderecotId);
 
-        if (!deletedEndereco) {
+        if (!deleteEndereco) {
             return res.status(404).json({ error: 'Endereco não encontrado' });
         }
 

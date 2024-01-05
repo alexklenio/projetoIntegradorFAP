@@ -20,7 +20,7 @@ class User implements IUser {
     @Column({ type: 'timestamp' })
     dataCadastro: Date;
 
-    // Método construtor
+
     constructor(email: string, password: string, nivelAcesso: string, dataCadastro: Date) {
         this.email = email;
         this.password = password;
@@ -28,7 +28,7 @@ class User implements IUser {
         this.dataCadastro = dataCadastro;
     }
 
-    // Getters
+   
     getId(): number | undefined {
         return this.id;
     }
@@ -49,7 +49,7 @@ class User implements IUser {
         return this.dataCadastro;
     }
 
-    // Setters
+   
     setEmail(email: string): void {
         this.email = email;
     }
@@ -66,12 +66,12 @@ class User implements IUser {
         this.dataCadastro = dataCadastro;
     }
 
-    // Método para criptografar a senha antes de salvar
+  
     async hashPassword(): Promise<void> {
-        this.password = await bcrypt.hash(this.password, 10); // 10 é o número de rounds de hashing
+        this.password = await bcrypt.hash(this.password, 10); 
     }
 
-    // Método para verificar a senha
+  
     async checkPassword(candidatePassword: string): Promise<boolean> {
         return bcrypt.compare(candidatePassword, this.password);
     }

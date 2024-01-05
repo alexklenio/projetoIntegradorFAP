@@ -6,7 +6,6 @@ interface IUser {
   nivelAcesso: string;
   dataCadastro: Date;
   
-  // Adicione o método checkPassword à interface
   checkPassword(candidatePassword: string): Promise<boolean>;
 }
 

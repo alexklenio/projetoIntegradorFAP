@@ -44,7 +44,7 @@ class Endereco {
     this.cep = cep;
   }
 
-  // Getters
+
   getUF(): string {
     return this.UF;
   }
@@ -73,7 +73,7 @@ class Endereco {
     return this.cep;
   }
 
-  // Setters
+
   setUF(UF: string): void {
     this.UF = UF;
   }
@@ -91,7 +91,6 @@ class Endereco {
   }
 
   setNumero(numero: number): void {
-    // Adicione validação se necessário
     this.numero = numero;
   }
 

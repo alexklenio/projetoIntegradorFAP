@@ -40,15 +40,13 @@ export const createUser = async (req: Request, res: Response): Promise<Response>
     try {
         const userData = req.body;
         
-        // Verifica se o e-mail já existe no banco de dados
         const existingUser = await UserRepository.getByEmail(userData.email);
         
         if (existingUser) {
-            // Se o e-mail já existe, retorna uma resposta indicando isso
             return res.status(400).json({ error: 'E-mail já cadastrado' });
         }
 
-        // Se o e-mail não existe, cria o novo usuário
+
         const newUser = await UserRepository.createUser(userData);
         const token = AuthService.generateToken(newUser);
 
@@ -108,9 +106,9 @@ export const deleteUser = async (req: Request, res: Response): Promise<Response>
         const userId = parseInt(req.params.id, 10); // Converte a string para número
         // ou: const userId = Number(req.params.id);
         
-        const deletedUser = await UserRepository.deleteUserById(userId);
+        const deleteUser = await UserRepository.deleteUserById(userId);
 
-        if (!deletedUser) {
+        if (!deleteUser) {
             return res.status(404).json({ error: 'Usuário não encontrado' });
         }
 

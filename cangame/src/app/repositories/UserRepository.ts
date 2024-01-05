@@ -25,7 +25,6 @@ const getUserById = async (userId: number): Promise<IUser | undefined> => {
 const getByEmail = async (email: string): Promise<IUser | undefined> => {
     const user = await userRepository.findOne({ where: { email } });
 
-    // Se o usuário não for encontrado, retorne undefined
     return user || undefined;
 };
 
@@ -41,22 +40,18 @@ const updateUserById = async (userId: number, userData: Partial<IUser>): Promise
         return undefined;
     }
 
-    // Atualize os campos necessários
     user.email = userData.email || user.email;
     user.nivelAcesso = userData.nivelAcesso || user.nivelAcesso;
     user.dataCadastro = userData.dataCadastro || user.dataCadastro;
 
-    // Se uma nova senha foi fornecida, atualize a senha diretamente com a senha fornecida em texto plano
     if (userData.password) {
         user.password = userData.password;
 
-        // Certifique-se de que a função hashPassword existe no modelo User
         if (typeof user.hashPassword === 'function') {
-            await user.hashPassword(); // Use await aqui para garantir que a função seja concluída antes de prosseguir
+            await user.hashPassword(); 
         }
     }
 
-    // Atualize o usuário no banco de dados
     user = await userRepository.save(user);
 
     return user;

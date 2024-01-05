@@ -20,6 +20,10 @@ Criar a migration das Tabelas
 ### npm run typeorm migration:create src/database/migrations/CreateUserTable
 ### npm run typeorm migration:create src/database/migrations/CreateContratoTable
 ### npm run typeorm migration:create src/database/migrations/CreateGestorTable
+### npm run typeorm migration:create src/database/migrations/CreateEnderecoTable
+### npm run typeorm migration:create src/database/migrations/CreateTelefoneTable
+### npm run typeorm migration:create src/database/migrations/CreateAdministradorTable
+### npm run typeorm migration:create src/database/migrations/CreateLicencaTable
 
 
 Rodar a migrations

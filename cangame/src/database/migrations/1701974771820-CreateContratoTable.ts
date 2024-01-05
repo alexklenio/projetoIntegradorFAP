@@ -34,20 +34,12 @@ export class CreateContratoTable1701898179260 implements MigrationInterface {
                         type: 'int',
                     },
                     {
-                        name: 'licencasUtilizadas',
-                        type: 'int',
-                    },
-                    {
-                        name: 'dataAquisicao',
-                        type: 'timestamp',
-                    },
-                    {
-                        name: 'dataExpiracao',
-                        type: 'timestamp',
-                    },
-                    {
-                        name: 'status',
+                        name: 'termo',
                         type: 'boolean',
+                    },
+                    {
+                        name: 'administradorId',
+                        type: 'int',
                     },
                     {
                         name: 'enderecoId',
@@ -55,6 +47,14 @@ export class CreateContratoTable1701898179260 implements MigrationInterface {
                     },
                 ],
             }), true);
+
+             // Adição da chave estrangeira para administrador
+        await queryRunner.createForeignKey('contrato', new TableForeignKey({
+            columnNames: ['administradorId'],
+            referencedColumnNames: ['id'],
+            referencedTableName: 'administrador',
+            onDelete: 'CASCADE',
+        }));
     
             // Adição da chave estrangeira para endereco
         await queryRunner.createForeignKey('contrato', new TableForeignKey({

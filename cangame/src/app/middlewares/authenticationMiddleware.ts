@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
+import jwt, { JsonWebTokenError, TokenExpiredError } from 'jsonwebtoken';
 import UserRepository from '../repositories/UserRepository';
 
 type JwtPayload = {
@@ -40,7 +40,17 @@ export const authenticationMiddleware = async (
 
     return next();
   } catch (error) {
-    console.error('Erro na autenticação:', error);
-    return res.status(401).json({ message: 'Token inválido' });
+    if (error instanceof JsonWebTokenError) {
+      console.error('Erro no token:', error.message);
+      return res.status(401).json({ message: 'Token inválido' });
+    } else if (error instanceof TokenExpiredError) {
+      console.error('Token expirado:', error.message);
+      return res.status(401).json({ message: 'Token expirado' });
+    } else {
+      console.error('Erro na autenticação:', error);
+      return res.status(500).json({ message: 'Erro na autenticação' });
+    }
   }
 };
+
+
